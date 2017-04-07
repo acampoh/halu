@@ -9,6 +9,8 @@ before_install:
 - sudo apt-get update -qq
 
 install:
-- sudo apt-get install -qq g++-4.8 cmake
+- sudo apt-get install -qq g++-4.8 cmake git
+- git clone git@github.com:acampoh/source.git lede
+- cd lede && make
 - export CXX="g++-4.8"
 script: "cmake . && make"
